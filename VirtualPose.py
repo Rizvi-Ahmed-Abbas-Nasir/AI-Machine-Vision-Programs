@@ -71,7 +71,7 @@ class poseDetector():
 def main():
     cap = cv2.VideoCapture(0)
     pTime = 0
-    detector = poseDetector(maxHands=2)
+    detector = poseDetector()
     while True:
         success, img = cap.read()
         img = detector.findPose(img)
