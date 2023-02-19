@@ -1,8 +1,9 @@
 from tkinter import *
 
-window = TK()
-window.geometry("400x400")
 
+root = Tk()
+root.geometry("400x400")
+myLabel = Label(root, text="Hello world")
+myLabel.pack()
 
-
-window.mainloop()
+root.mainloop()

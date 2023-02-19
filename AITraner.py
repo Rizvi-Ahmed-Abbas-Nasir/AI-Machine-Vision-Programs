@@ -6,7 +6,7 @@ import VirtualPose as pm
 
 cap = cv2.VideoCapture(0)
 
-detector = pm.poseDetector(maxHands=2)
+detector = pm.poseDetector()
 count = 0
 dir = 0
 pTime = 0
@@ -22,6 +22,7 @@ while True:
         # angle = detector.findAngle(img, 12, 14, 16)
         # # # Left Arm
         # angle = detector.findAngle(img, 11, 13, 15)
+        # Legs
         angle = detector.findAngle(img, 27, 25, 23)
         angle = detector.findAngle(img,28, 26, 24)
 
