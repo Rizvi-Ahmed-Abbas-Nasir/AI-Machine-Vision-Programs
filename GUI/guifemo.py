@@ -1,18 +1,25 @@
+import gc
+
 import pyttsx3
 from tkinter import *
 import subprocess, time
 import threading
 import HandTrackingModule
-
-
-
+import Main
 
 window = Tk()
 
+
 def click():
-   gc = HandTrackingModule.main()
-   t = threading.Thread(target=gc.start)
+   g = HandTrackingModule.main()
+   t = threading.Thread(target=g.start)
    t.start()
+
+def exitPro():
+   g  = Main.main()
+   t = threading.Thread(target=g.start)
+   t.start()
+
 
 
 
@@ -29,7 +36,10 @@ def open_py_file():
 
 
 
-window.geometry("400x400")
-button = Button(window, text="Click ME",command=threading.Thread(target=click).start)
+window.geometry("900x600")
+button = Button(window, text="Click ME",command=click)
+#command=threading.Thread(target=click).start)
+button2 = Button(window, text="Destory Me", command=exitPro)
 button.pack()
+button2.pack()
 window.mainloop()
