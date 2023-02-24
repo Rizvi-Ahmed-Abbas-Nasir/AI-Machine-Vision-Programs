@@ -62,7 +62,7 @@ class App(customtkinter.CTk):
         # TabsView
 
         Pages = customtkinter.CTkTabview(self, width=895, height=565,
-                                            fg_color=("#bdbdc1", "#29292a"))  # 262628 alternate Color
+                                            fg_color=("#bdbdc1", "#29292a"), corner_radius=15)  # 262628 alternate Color
         Pages.add(" Home ")
         Pages.add(" Desktop Controller ")
         Pages.add(" Tranier ")
