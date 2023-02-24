@@ -24,6 +24,8 @@ class App(customtkinter.CTk):
         self.toplevel_window = None
         self.title("AI Machine Vision")
         self.geometry(f"{1100}x{580}")
+        #Icon for TopLevel Window
+        # self.after(201, lambda: self.iconbitmap("logo2.png"))
 
         # configure grid layout (4x4)
         self.grid_columnconfigure(1, weight=1)
@@ -62,7 +64,7 @@ class App(customtkinter.CTk):
         # TabsView
 
         Pages = customtkinter.CTkTabview(self, width=895, height=565,
-                                            fg_color=("#bdbdc1", "#29292a"), corner_radius=15)  # 262628 alternate Color
+                                         fg_color=("#bdbdc1", "#29292a"), corner_radius=15)  # 262628 alternate Color
         Pages.add(" Home ")
         Pages.add(" Desktop Controller ")
         Pages.add(" Tranier ")
@@ -72,12 +74,12 @@ class App(customtkinter.CTk):
         Pages._segmented_button.grid(sticky="W")
 
         HomeLabel0 = customtkinter.CTkLabel(Pages.tab(" Home "), text="AI ",
-                                           font=customtkinter.CTkFont(family="IBM Plex Sans", size=90),
+                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=90),
                                             fg_color="white", text_color="black", corner_radius=10)
         HomeLabel0.place(x=50, y=46)
 
         HomeLabel1 = customtkinter.CTkLabel(Pages.tab(" Home "), text=" Machine Vision",
-                                           font=customtkinter.CTkFont(family="IBM Plex Sans", size=30),
+                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=30),
                                             corner_radius=10)
         HomeLabel1.place(x=155, y=78)
 
