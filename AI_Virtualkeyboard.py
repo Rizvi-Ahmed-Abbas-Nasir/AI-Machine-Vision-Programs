@@ -1,7 +1,7 @@
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 from time import sleep
-import numpy as np
+import numpy as npM
 import cvzone
 from pynput.keyboard import Controller
 

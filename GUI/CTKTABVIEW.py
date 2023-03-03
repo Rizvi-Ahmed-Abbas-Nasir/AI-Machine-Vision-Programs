@@ -32,6 +32,9 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure((2, 3), weight=0)
         self.grid_rowconfigure((0, 1, 2), weight=1)
 
+        # images
+        ImageHome = customtkinter.CTkImage(dark_image=PIL.Image.open("AIExapmple.png"), size=(200, 200))  # Images
+
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
@@ -67,7 +70,7 @@ class App(customtkinter.CTk):
                                          fg_color=("#bdbdc1", "#29292a"), corner_radius=15)  # 262628 alternate Color
         Pages.add(" Home ")
         Pages.add(" Desktop Controller ")
-        Pages.add(" Tranier ")
+        Pages.add(" Trainer ")
         Pages.add(" VirtualKeyboard ")
         Pages.add(" Presentation Controller ")
         Pages.place(x=190, y=3)
@@ -83,14 +86,37 @@ class App(customtkinter.CTk):
                                             corner_radius=10)
         HomeLabel1.place(x=155, y=78)
 
-        # ImageHome = customtkinter.CTkImage(dark_image=PIL.Image.open("AIExapmple.png"), size=(350, 250))
-        #
-        # button_1 = customtkinter.CTkButton(notebook.tab(" Home "),
+
+        HomeLabel2 = customtkinter.CTkLabel(Pages.tab(" Home "), text=" Diploma Final Year Project",
+                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=40),
+                                            corner_radius=0)
+        HomeLabel2.place(x=5, y=280)
+
+        HomeLabel3 = customtkinter.CTkLabel(Pages.tab(" Home "),
+                                            text="An Artificial Intelligence (AI) All Computer Vision program "
+                                                 "are Intergrated in one Appliaction ",
+                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=19),
+                                            corner_radius=0)
+        HomeLabel3.place(x=15, y=350)
+
+        # App Images
+        # button_1 = customtkinter.CTkButton(Pages.tab(" Home "),
+        #                                    corner_radius=100,
         #                                    image=ImageHome,
         #                                    text=" ",
         #                                    fg_color="#29292a",
         #                                    hover_color="#29292a")
-        # button_1.place(x=15, y=20)
+        # button_1.place(x=0, y=300)
+
+        # TextBox
+        self.textbox = customtkinter.CTkTextbox(Pages.tab(" Home "), width=350,height=240)
+        self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox.insert("0.0","About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
+                                                     "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
+                                                     "magna aliquyam erat, sed diam voluptua.\n\n")
+        self.textbox.configure(state="disabled")  # configure textbox to be read-only
+
+
 
     # Methods
     def open_input_dialog_event(self):
@@ -110,9 +136,8 @@ class App(customtkinter.CTk):
     def open_toplevel(self):
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
             self.toplevel_window = ToplevelWindow(self)  # create window if its None or destroyed
-            self.toplevel_window.focus()
-        else:
-            self.toplevel_window.focus()  # if window exists focus it
+            self.toplevel_window.grab_set()
+
 
 
 if __name__ == "__main__":
